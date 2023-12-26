@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2> Hy It's Manan</h2>
+
+<h3 id="trial">How are you</h3>
+<script>
+    function java() {
+        let btn=document.getElementById("trial2")
+        var m = document.getElementById("trial")
+        if (m.style.display === "none") {
+            m.style.display = "block";
+            btn.textContent = "hide me "
+        } else {
+            m.style.display = "none";
+            btn.textContent = "show me "
+        }
+    }
+</script>
+<button onclick="java()" id="trial2">hide me!</button>
+
+</body>
+</html> 
