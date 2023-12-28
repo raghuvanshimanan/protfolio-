@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List Submission with Delete</title>
+</head>
+<body>
+
+  <h2>Enter Names</h2>
+  <input type="text" id="nameInput" placeholder="Enter a name">
+  <button onclick="addName()">Add Name</button>
+
+  <h2>Names List</h2>
+  <ul id="nameList"></ul>
+
+  <script>
+    function addName() {
+      var nameInput = document.getElementById('nameInput');
+      var name = nameInput.value;
+      if (name.trim() !== '') {
+        var nameList = document.getElementById('nameList');
+        var listItem = document.createElement('li');
+        listItem.textContent = name;
+        var deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.onclick = function() {
+          nameList.removeChild(listItem);
+        };
+        listItem.appendChild(deleteButton);
+        nameList.appendChild(listItem);
+        nameInput.value = '';
+      } else {
+        alert('Please enter a name.');
+      }
+    }
+  </script>
+
+</body>
+</html>
